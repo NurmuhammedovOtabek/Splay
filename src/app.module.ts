@@ -3,11 +3,23 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { AdminModule } from './admin/admin.module';
 import { ConfigModule } from '@nestjs/config';
+import { PlansModule } from './plans/plans.module';
+import { GraphQLModule } from "@nestjs/graphql";
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { SubsciptionModule } from './subsciption/subsciption.module';
+import { PaymentsModule } from './payments/payments.module';
+
 
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: ".env", isGlobal: true }),
 
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: "schema.gql",
+      sortSchema: true,
+      playground: true,
+    }),
     TypeOrmModule.forRoot({
       type: "postgres",
       host: process.env.DB_HOST,
@@ -20,6 +32,9 @@ import { ConfigModule } from '@nestjs/config';
     }),
     UserModule,
     AdminModule,
+    PlansModule,
+    SubsciptionModule,
+    PaymentsModule,
   ],
   controllers: [],
   providers: [],

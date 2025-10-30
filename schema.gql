@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreatePlanDto {
+  billing_quality: String!
+  concurrent_streams: Float!
+  currency: String!
+  max_profiles: Float!
+  price: Float!
+  title: String!
+  video_quality: Video!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createPlan(create_Plan: CreatePlanDto!): Plan!
+  remove(id: ID!): ID!
+  updatePlan(id: ID!, updatePlan: UpdatePlanDto!): Plan!
+}
+
+type Plan {
+  billing_quality: String!
+  concurrent_streams: Float!
+  created_at: DateTime!
+  currency: String!
+  id: ID!
+  max_profiles: Float!
+  price: Float!
+  title: String!
+  updated_at: DateTime!
+  video_quality: Video!
+}
+
+type Query {
+  findAllPlan: [Plan!]!
+  findOnePlan(id: ID!): Plan!
+}
+
+input UpdatePlanDto {
+  billing_quality: String
+  concurrent_streams: Float
+  currency: String
+  max_profiles: Float
+  price: Float
+  title: String
+  video_quality: Video
+}
+
+"""sfsdfs"""
+enum Video {
+  fhd
+  hd
+  sd
+  uhd
+}
