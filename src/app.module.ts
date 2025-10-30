@@ -8,6 +8,9 @@ import { GraphQLModule } from "@nestjs/graphql";
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { SubsciptionModule } from './subsciption/subsciption.module';
 import { PaymentsModule } from './payments/payments.module';
+import { DevicesModule } from './devices/devices.module';
+import { ProfilesModule } from './profiles/profiles.module';
+import { ContentsModule } from './contents/contents.module';
 
 
 @Module({
@@ -35,6 +38,9 @@ import { PaymentsModule } from './payments/payments.module';
     PlansModule,
     SubsciptionModule,
     PaymentsModule,
+    DevicesModule,
+    ProfilesModule,
+    ContentsModule,
   ],
   controllers: [],
   providers: [],
