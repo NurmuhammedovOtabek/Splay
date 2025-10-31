@@ -11,6 +11,7 @@ import { PaymentsModule } from './payments/payments.module';
 import { DevicesModule } from './devices/devices.module';
 import { ProfilesModule } from './profiles/profiles.module';
 import { ContentsModule } from './contents/contents.module';
+import { TagsModule } from './tags/tags.module';
 
 
 @Module({
@@ -41,6 +42,7 @@ import { ContentsModule } from './contents/contents.module';
     DevicesModule,
     ProfilesModule,
     ContentsModule,
+    TagsModule,
   ],
   controllers: [],
   providers: [],
